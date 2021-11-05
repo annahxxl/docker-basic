@@ -9,16 +9,16 @@ const app = express();
 app.use(express.json());
 
 // 데이터베이스에 lists 테이블 생성하기
-db.pool.query(
-  `CREATE TABLE lists (
-  id INTEGER AUTO_INCREMENT,
-  value TEXT,
-  PRIMARY KEY (id)
-)`,
-  (err, rows, fields) => {
-    console.log("rows", rows);
-  }
-);
+// db.pool.query(
+//   `CREATE TABLE lists (
+//   id INTEGER AUTO_INCREMENT,
+//   value TEXT,
+//   PRIMARY KEY (id)
+// )`,
+//   (err, rows, fields) => {
+//     console.log("rows", rows);
+//   }
+// );
 
 // 데이터베이스 lists 테이블에 있는 모든 데이터를 클라이언트 서버에 보내주기
 app.get("/api/values", function (req, res) {
